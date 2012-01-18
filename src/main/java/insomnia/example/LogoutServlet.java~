@@ -1,0 +1,17 @@
+package insomnia.example;
+
+import java.io.*;
+import javax.servlet.http.*;
+import javax.servlet.*;
+
+public class HelloServlet extends HttpServlet {
+
+    public void doGet( HttpServletRequest req, HttpServletResponse res) 
+	throws ServletException, IOException {
+	//	PrintWriter out = res.getWriter();
+	//	String id = req.getSession().getId();
+	//	out.println("Hello " + id + " you stupid fucker 1");
+	res.sendRedirect(res.encodeRedirectURL("home.jsp"));
+
+    }
+}

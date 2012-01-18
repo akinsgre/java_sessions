@@ -20,7 +20,10 @@ public class HelloServlet extends HttpServlet {
 	throws ServletException, IOException {
 
 	req.getSession().invalidate();
-	req.getSession().setAttribute("name", "Greg");
+	String name = req.getParameter("name");
+	String color = req.getParameter("color");
+	req.getSession().setAttribute("name", name);
+	req.getSession().setAttribute("color", color);
 	String id = req.getSession().getId();
 	req.getSession().setAttribute("sessionId", id);
 

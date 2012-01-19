@@ -2,9 +2,7 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>example_app</display-name>
   <session-config>
-    <session-timeout>
-      30
-    </session-timeout>
+    <session-timeout>1</session-timeout>
   </session-config>
   <servlet>
     <servlet-name>hello</servlet-name>
@@ -23,6 +21,14 @@
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+<filter> 
+      <filter-name>sessionId</filter-name> 
+      <filter-class>insomnia.example.SessionIdFilter</filter-class> 
+   </filter> 
+   <filter-mapping> 
+      <filter-name>sessionId</filter-name> 
+      <url-pattern>/*</url-pattern> 
+   </filter-mapping> 
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

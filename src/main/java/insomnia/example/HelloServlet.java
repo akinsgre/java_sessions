@@ -11,7 +11,7 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet( HttpServletRequest req, HttpServletResponse res) 
 	throws ServletException, IOException {
-
+	logger.info("Getting the home page");
 	res.sendRedirect(res.encodeRedirectURL("home.jsp"));
 
     }
@@ -20,10 +20,12 @@ public class HelloServlet extends HttpServlet {
 	throws ServletException, IOException {
 
 	req.getSession().invalidate();
+	logger.info("Logging in");
 	String name = req.getParameter("name");
 	String color = req.getParameter("color");
 	req.getSession().setAttribute("name", name);
 	req.getSession().setAttribute("color", color);
+	req.getSession().setAttribute("sessionId", req.getSession().getId());
 	String id = req.getSession().getId();
 	req.getSession().setAttribute("sessionId", id);
 

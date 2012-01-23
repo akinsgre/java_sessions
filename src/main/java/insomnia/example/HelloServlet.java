@@ -12,7 +12,9 @@ public class HelloServlet extends HttpServlet {
     public void doGet( HttpServletRequest req, HttpServletResponse res) 
 	throws ServletException, IOException {
 	logger.info("Getting the home page");
-	res.sendRedirect(res.encodeRedirectURL("home.jsp"));
+	RequestDispatcher dispatcher = req.getRequestDispatcher("home.jsp");
+	dispatcher.forward(req, res);
+	//	res.sendRedirect(res.encodeRedirectURL("home.jsp"));
 
     }
 
@@ -28,7 +30,8 @@ public class HelloServlet extends HttpServlet {
 	req.getSession().setAttribute("sessionId", req.getSession().getId());
 	String id = req.getSession().getId();
 	req.getSession().setAttribute("sessionId", id);
+	RequestDispatcher dispatcher = req.getRequestDispatcher("home.jsp");
+	dispatcher.forward(req, res);
 
-	res.sendRedirect(res.encodeRedirectURL("home.jsp"));
     }
 }

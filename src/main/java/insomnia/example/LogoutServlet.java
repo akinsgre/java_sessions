@@ -9,8 +9,8 @@ public class LogoutServlet extends HttpServlet {
     public void doGet( HttpServletRequest req, HttpServletResponse res) 
 	throws ServletException, IOException {
 	if (req.getSession() != null) req.getSession().invalidate();
-
-	res.sendRedirect(res.encodeRedirectURL("home.jsp"));
+	RequestDispatcher dispatcher = req.getRequestDispatcher("home.jsp");
+	dispatcher.forward(req, res);
 
     }
 }

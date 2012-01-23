@@ -1,6 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<head>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE, NO-STORE">
 
+</head>
+<body>
 <h1>Test page</h1>
+<a href="/goodbye">Goodbye</a>
 <p>I'm ${name}</p>
 <p>My favorite color is ${color} </p>
 <p>My session is ${sessionId}</p>
@@ -10,3 +16,6 @@ Color <input name="color" id="color" type="text"/>
 <input type="submit" />
 </form>
 <a href="/logout" >Logout</a>
+
+</body>
+</html>

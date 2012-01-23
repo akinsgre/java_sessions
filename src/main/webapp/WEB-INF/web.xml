@@ -9,6 +9,10 @@
     <servlet-class>insomnia.example.HelloServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>goodbye</servlet-name>
+    <servlet-class>insomnia.example.GoodByeServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>logout</servlet-name>
     <servlet-class>insomnia.example.LogoutServlet</servlet-class>
   </servlet>
@@ -20,6 +24,10 @@
   <servlet-mapping>
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>goodbye</servlet-name>
+    <url-pattern>/goodbye</url-pattern>
   </servlet-mapping>
 <filter> 
       <filter-name>sessionId</filter-name> 
